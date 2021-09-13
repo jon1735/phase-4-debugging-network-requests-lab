@@ -62,12 +62,12 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: First we tested out the "add toy" button in the browser. Once we input our own information, we got an error in the terminal that said: "NameError (uninitialized constant ToysController::Toys):"... This error prompted us to check our toy_controller. Once there, we saw that the Toy model was misspelled as "Toys" in the create method. 
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How we debugged: Kyle and I debugged this issue by first opening up the in browser console... We saw that there was an error that gave us a prompt which stated there was an error with the JSON input. Kyle had then pointed out that we should look at the controller file to make sure that all of the resources were correct and we were calling the correct methods on the actions we wanted performed. Once inside the toys controller file, we saw that the update action/method was missing a render json: toy.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: First I tested out the "donate to goodwill" button on the website... In my terminal, after initiating the donate action, I received a prompt that said "ActionController::RoutingError (No route matches [DELETE] "/toys/1"):"... This lead me to believe that we were missing something in the routes file. I then checked the routes file out, and saw that there wasn't a :delete symbol, so  just ended up deleting the existing information and only left in toys. This then allowed the website to work as intended. 
